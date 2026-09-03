@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Praveen Yadav - Resume</title>
+
+  <style>
+    /* Removes default page spacing and makes width calculations easier for every element. */
+    * {
+      box-sizing: border-box;
+    }
+
+    /* Sets the browser page background and a clean, readable default font for the resume. */
+    body {
+      margin: 0;
+      background: #eef1f4;
+      color: #202124;
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.42;
+    }
+
+    /* Creates the white resume card with a limited width and space around it. */
+    .resume-page {
+      width: min(100% - 32px, 900px);
+      margin: 32px auto;
+      padding: 44px 54px 48px;
+      background: #ffffff;
+      box-shadow: 0 10px 28px rgba(24, 36, 48, 0.12);
+    }
+
+    /* Centers the name and contact details at the top of the resume. */
+    .resume-header {
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    /* Controls the main name's size, weight, and space below it. */
+    .name {
+      margin: 0 0 8px;
+      font-size: clamp(2rem, 5vw, 2.75rem);
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: 0.02em;
+    }
+
+    /* Keeps the first contact line, containing email and phone, together. */
+    .contact-row {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 3px 10px;
+      margin: 0;
+      font-size: 1rem;
+    }
+
+    /* Sets spacing for the second contact line containing LinkedIn and GitHub. */
+    .profile-row {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 3px 12px;
+      margin: 4px 0 0;
+      font-size: 1rem;
+    }
+
+    /* Defines the color and spacing of the vertical line between contact details. */
+    .separator {
+      color: #444444;
+    }
+
+    /* Displays all links in a dark, underlined resume-style appearance. */
+    a {
+      color: inherit;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    /* Shows a clear focus outline when a link is selected with the keyboard. */
+    a:focus-visible {
+      outline: 2px solid #1b65b9;
+      outline-offset: 3px;
+    }
+
+    /* Adds space between each content section. */
+    .resume-section {
+      margin-top: 20px;
+    }
+
+    /* Sets the size, bold text, and bottom border for section headings. */
+    .section-title {
+      margin: 0 0 12px;
+      padding-bottom: 5px;
+      border-bottom: 2px solid #333333;
+      font-size: 1.28rem;
+      font-weight: 700;
+      line-height: 1.1;
+    }
+
+    /* Removes the default top and bottom spacing from paragraphs. */
+    p {
+      margin: 0;
+    }
+
+    /* Adds enough space between each education entry. */
+    .education-item + .education-item {
+      margin-top: 8px;
+    }
+
+    /* Places the institution and score in left and right columns. */
+    .education-line {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 10px 24px;
+      align-items: end;
+    }
+
+    /* Displays school or college names in bold. */
+    .institution {
+      font-weight: 700;
+    }
+
+    /* Italicizes the degree and year line to match the original resume. */
+    .qualification {
+      font-style: italic;
+    }
+
+    /* Keeps the percentage and CGPA on the right side. */
+    .score {
+      white-space: nowrap;
+    }
+
+    /* Controls bullet spacing for the skills, certifications, and achievements lists. */
+    .details-list {
+      margin: 0;
+      padding-left: 24px;
+    }
+
+    /* Adds light vertical spacing between each list item. */
+    .details-list li + li {
+      margin-top: 2px;
+    }
+
+    /* Makes the project title bold and adds a small space below it. */
+    .project-title {
+      margin: 0 0 2px;
+      font-weight: 700;
+    }
+
+    /* Adds spacing between the Tech Stack line and the project bullets. */
+    .tech-stack {
+      margin-bottom: 8px;
+    }
+
+    /* Keeps the project description bullets distinct from other lists and easy to read. */
+    .project-list {
+      margin: 0;
+      padding-left: 24px;
+    }
+
+    /* Adds a small amount of space between each project bullet. */
+    .project-list li + li {
+      margin-top: 4px;
+    }
+
+    /* Reduces the resume's side padding on small screens so text does not get cut off. */
+    @media (max-width: 620px) {
+      .resume-page {
+        width: min(100% - 20px, 900px);
+        margin: 10px auto;
+        padding: 28px 22px 32px;
+      }
+
+      .education-line {
+        grid-template-columns: 1fr;
+        gap: 2px;
+      }
+
+      .score {
+        justify-self: start;
+      }
+    }
+
+    /* Removes the background, shadow, and outer margin when printing for an A4-friendly layout. */
+    @media print {
+      body {
+        background: #ffffff;
+      }
+
+      .resume-page {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        box-shadow: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- The complete resume is placed inside this single container. -->
+  <main class="resume-page">
+
+    <!-- Header: name, email, phone, and main profile links. -->
+    <header class="resume-header">
+      <h1 class="name">Praveen Yadav</h1>
+
+      <p class="contact-row">
+        <a href="mailto:praveenyadav2904@gmail.com">praveenyadav2904@gmail.com</a>
+        <span class="separator">|</span>
+        <a href="tel:+916306413096">+91 6306413096</a>
+      </p>
+
+      <p class="profile-row">
+        <a href="https://www.linkedin.com/in/praveenyadav2904/" target="_blank">
+        LinkedIn
+        </a>
+        <span class="separator">|</span>
+        <a href="https://github.com/praveenyadav2904-cpu" target="_blank">
+          GitHub
+        </a>
+      </p>
+    </header>
+
+    <!-- Objective section: the original objective text from the resume. -->
+    <section class="resume-section">
+      <h2 class="section-title">OBJECTIVE</h2>
+      <p>
+        A third-year B.Tech Computer Science Engineering student with a strong foundation in programming,
+        data structures, and web development. Passionate about learning new technologies and building
+        efficient software solutions.
+      </p>
+    </section>
+
+    <!-- Education section: institutions, qualifications, and scores. -->
+    <section class="resume-section">
+      <h2 class="section-title">EDUCATION</h2>
+
+      <article class="education-item">
+        <div class="education-line">
+          <p class="institution">Jagmohan Public School, Jaunpur, Uttar Pradesh</p>
+          <p class="score">Percentage : 83.50%</p>
+        </div>
+        <p class="qualification">10<sup>th</sup> Standard (Year-2020)</p>
+      </article>
+
+      <article class="education-item">
+        <div class="education-line">
+          <p class="institution">Jagmohan Public School, Jaunpur, Uttar Pradesh</p>
+          <p class="score">Percentage : 82.20%</p>
+        </div>
+        <p class="qualification">12<sup>th</sup> Standard (Year-2022)</p>
+      </article>
+
+      <article class="education-item">
+        <div class="education-line">
+          <p class="institution">Veer Bahadur Singh Purvanchal University, Jaunpur, Uttar Pradesh</p>
+          <p class="score">CGPA : 7.11/10.00</p>
+        </div>
+        <p class="qualification">Bachelor of Science (Year-2025)</p>
+      </article>
+
+      <article class="education-item">
+        <div class="education-line">
+          <p class="institution">Galgotias College Of Engineering &amp; Technology, Gr. Noida, Uttar Pradesh</p>
+          <p class="score">CGPA : 7.27/10.00</p>
+        </div>
+        <p class="qualification">
+          Bachelor of Technology in Computer Science Engineering (Expected 2028)
+        </p>
+      </article>
+    </section>
+
+    <!-- Technical skills section: displays the resume skills with the same wording. -->
+    <section class="resume-section">
+      <h2 class="section-title">TECHNICAL SKILLS</h2>
+
+      <ul class="details-list">
+        <li>Languages: Python, JavaScript, C++, C, Java</li>
+        <li>Web Development &amp; Frameworks: Node.js, Express.js, HTML5, CSS3</li>
+        <li>Databases: MongoDB</li>
+        <li>Developer Tools: Git, GitHub, VS Code</li>
+        <li>Core Fundamentals: Data Structures &amp; Algorithms (DSA), Object-Oriented Programming (OOP)</li>
+      </ul>
+    </section>
+
+    <!-- Projects section: project name, tech stack, and original project details. -->
+    <section class="resume-section">
+      <h2 class="section-title">PROJECTS</h2>
+
+      <article>
+        <p class="project-title">Attendance Monitoring System</p>
+
+        <p class="tech-stack">
+          <strong>Tech Stack:</strong> Node.js, Express.js, MongoDB, JavaScript, HTML5, CSS3
+        </p>
+
+        <ul class="project-list">
+          <li>
+            Architected a full-stack attendance management application to automate student record-keeping,
+            minimizing administrative overhead.
+          </li>
+          <li>
+            Implemented automated email alert triggers using backend validation logic to notify parents
+            instantly when student attendance drops below the defined threshold.
+          </li>
+          <li>
+            Designed a fully responsive frontend dashboard featuring real-time tracking capabilities and
+            dynamic attendance report generation.
+          </li>
+        </ul>
+      </article>
+    </section>
+
+    <!-- Certifications section: every certification listed in the resume. -->
+    <section class="resume-section">
+      <h2 class="section-title">CERTIFICATIONS</h2>
+
+      <ul class="details-list">
+        <li>Course on Computer Concept (CCC) From NEILIT</li>
+        <li>Certified in CyberOps &amp; Professional Edge – NIIT Foundation | Feb 2026</li>
+        <li>Completed 3-Day Robotics Workshop – Bharat Space Education Research Centre | Feb 2026</li>
+      </ul>
+    </section>
+
+    <!-- Achievements section: technical profile links and original achievement details. -->
+    <section class="resume-section">
+      <h2 class="section-title">ACHIEVEMENTS</h2>
+
+      <ul class="details-list">
+        <li>
+          Technical Profiles:
+          <a href="https://codolio.com/profile/praveenyadav2904" target="_blank">Codolio</a> |
+          <a href="https://leetcode.com/u/Praveenyadav2904/" target="_blank">LeetCode</a> |
+          <a href="https://www.geeksforgeeks.org/profile/praveenyadav2904" target="_blank">GeeksforGeeks</a>
+        </li>
+        <li>Academic Excellence: Honored with a District-Level Academic Excellence Award for 12th grade.</li>
+        <li>Competitive Aptitude: Awarded twice in general knowledge competitions for exceptional performance</li>
+      </ul>
+    </section>
+
+  </main>
+</body>
+</html>
